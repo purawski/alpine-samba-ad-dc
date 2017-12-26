@@ -12,5 +12,6 @@ VOLUME /etc/samba
 
 EXPOSE 137/udp 138/udp 139 445
 COPY sleepi.sh /
+COPY init.sh /
 #CMD ["/bin/sh"]
-CMD ["/sleepi.sh"]
+CMD ["/init.sh"]
