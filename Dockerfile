@@ -8,7 +8,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     rm /etc/samba/smb.conf
 
-VOLUME /etc/samba
+VOLUME ["/etc/samba","/var/lib/samba"]
 
 EXPOSE 137/udp 138/udp 139 445
 COPY sleepi.sh /
