@@ -5,7 +5,7 @@ MAINTAINER Pawel Urawski
 RUN apk update && \
     apk --no-cache --no-progress upgrade && \
     apk --no-cache --no-progress add bash-completion shadow openrc coreutils \
-    krb5 samba-dc ldb-tools supervisor && \
+    krb5 samba-dc ldb-tools supervisor bind-tools && \
     rm -rf /var/cache/apk/* && \
     rm /etc/samba/smb.conf
 
