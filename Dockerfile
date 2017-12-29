@@ -91,31 +91,52 @@ RUN set -x \
 
 # Copy named.conf
 COPY bind/* /etc/bind/
+####################################################
+########    remove     GCC   and tools      ########
+####################################################
 
+RUN apk udate && \
+    apk --no-cache --no-progress upgrade && \
+    apk --no-cache --no-progress del \
+    gcc \
+    curl \
+    tar \
+    alpine-sdk \
+    linux-headers \
+	libxml2-dev \
+    openssl \
+	openssl-dev \
+    perl \
+	libcap-dev \
+    krb5-dev \
+    && rm -rf /var/cache/apk/*   
 
 
 RUN apk update && \
     apk --no-cache --no-progress upgrade && \
-    apk --no-cache --no-progress add bash-completion \
-    krb5 krb5-server samba-dc \
+    apk --no-cache --no-progress add \
+    bash-completion \
+    krb5 \
+#    krb5-server \
+    samba-dc \
     shadow coreutils ldb-tools supervisor \
-    pwgen \
+#    pwgen \
     acl-dev \
     attr-dev \
-    blkid \
+#    blkid \
     gnutls-dev \
-    readline-dev \
-    python-dev \
-    linux-pam-dev \
-    py-pip \
-    popt-dev \
+#    readline-dev \
+#    python-dev \
+#    linux-pam-dev \
+#    py-pip \
+#    popt-dev \
 #    openldap-dev \
-    libbsd-dev \
-    cups-dev \
+#    libbsd-dev \
+#    cups-dev \
     ca-certificates \
     py-certifi \
     rsyslog \
-    expect \
+#    expect \
     tdb \
     tdb-dev \
     py-tdb \
