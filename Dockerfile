@@ -117,15 +117,15 @@ RUN apk update && \
     apk --no-cache --no-progress upgrade && \
     apk --no-cache --no-progress add \
     bash-completion \
-    krb5 \
+#    krb5 \
 #    krb5-server \
     samba-dc \
     shadow coreutils ldb-tools supervisor \
 #    pwgen \
-    acl-dev \
-    attr-dev \
+#    acl-dev \
+#    attr-dev \
 #    blkid \
-    gnutls-dev \
+#    gnutls-dev \
 #    readline-dev \
 #    python-dev \
 #    linux-pam-dev \
@@ -135,12 +135,12 @@ RUN apk update && \
 #    libbsd-dev \
 #    cups-dev \
     ca-certificates \
-    py-certifi \
-    rsyslog \
+#    py-certifi \
+#    rsyslog \
 #    expect \
-    tdb \
-    tdb-dev \
-    py-tdb \
+#    tdb \
+#    tdb-dev \
+#    py-tdb \
     && \
     rm -rf /var/cache/apk/* && \
     rm /etc/samba/smb.conf
