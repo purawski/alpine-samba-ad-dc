@@ -95,7 +95,7 @@ COPY bind/* /etc/bind/
 ########    remove     GCC   and tools      ########
 ####################################################
 
-RUN apk udate && \
+RUN apk update && \
     apk --no-cache --no-progress upgrade && \
     apk --no-cache --no-progress del \
     gcc \
@@ -109,6 +109,7 @@ RUN apk udate && \
     perl \
 	libcap-dev \
     krb5-dev \
+    libbsd-dev \
     && rm -rf /var/cache/apk/*   
 
 
