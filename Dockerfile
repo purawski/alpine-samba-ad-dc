@@ -117,7 +117,11 @@ RUN apk update && \
     apk --no-cache --no-progress upgrade && \
     apk --no-cache --no-progress add \
     bash-completion \
-#    krb5 \
+    krb5 \
+    openssh-client \
+#    freeradius-radclient \
+    freeradius \
+    samba-winbind-clients \
 #    krb5-server \
     samba-dc \
     shadow coreutils ldb-tools supervisor \
